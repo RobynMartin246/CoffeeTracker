@@ -1,0 +1,257 @@
+.link{
+	color: #88E8FF;
+	font-size:15px;
+}
+
+#base {
+	background: linear-gradient(180deg, #ffb307 5%, #237990 100%);
+
+}
+
+.hero {
+		margin-left: 20px !important;
+		margin-bottom: 20px !important;
+		margin-top: 200px !important;
+		margin-right: 100px !important;
+
+}
+div hr {
+    	margin-top: 0;
+    	margin-bottom: 10px;
+    	border: 0;
+    	border-top: 1px solid #eee;
+	}
+
+div h1{
+	font-family: roboto slab;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 64px !important;
+	color:white !important;
+}
+
+div h2 {
+	font-family: roboto slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 30px;
+	letter-spacing: 4px;
+	color:white;
+}
+
+div h3{
+	font-family: Roboto Slab !important;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px !important;
+	line-height: 23px !important;
+	letter-spacing: 4px !important;
+
+	color: white !important;
+}
+
+div p, div button a{
+	font-size: 15px;
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 23px;
+	color: white;
+}
+
+div h4{
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 23px;
+	letter-spacing: 2px;
+
+	color: white;
+}
+
+div p{
+	font-size: 18px;
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 23px;
+}
+
+.errorlist{
+	color: #88E8FF;
+	padding:10px !important;
+}
+
+.clear-button {
+	width: auto;
+	height: 56px;
+	color:white;
+	background: rgba(0, 0, 0, 0.56);
+	border: 2px solid #FFFBFB;
+	box-sizing: border-box;
+	margin: 5px;
+	
+}
+
+.white-button {
+	width: auto;
+	height: 56px;
+	background: rgba(255, 251, 251, 0.37);
+	border: 2px solid #FFFBFB;
+	box-sizing: border-box;
+	margin: 5px;
+}
+
+.white-button a{
+	color: black;
+	font-weight: bold;
+}
+
+.clear-login-button {
+	width: 100%;
+	font-size: 18px;
+	color:white;
+
+	background: rgba(0, 0, 0, 0.56);
+	border: 1px solid #FFFBFB;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+
+.submit-button{
+	background: #676867;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+	font-size: 18px;
+	line-height: 23px;
+	text-align: center;
+	margin-top: 20px;
+	color: #C9C8C6;
+	background: rgba(0, 0, 0, 0.43);
+}
+
+.register-button{
+	position: relative;
+	width: auto;
+	height: 96px;
+	margin-left: 75px;
+	margin-right: 75px;
+	top: 116px;
+	
+}
+
+.register-button h1{
+	position: relative;
+	top: 12px;
+}
+
+.login-box{
+	position: relative;
+	width: fit-content !important;
+	padding-left: 40px !important;
+	padding-right: 40px !important;
+	padding-bottom: 20px !important;
+	height: fit-content !important;
+	top: 56px;
+	background: rgba(0, 0, 0, 0.56);
+	
+}
+
+.centerBlock {
+	display: table;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 20px;
+
+}
+
+
+.brew-box{
+	border-top: 50px solid #E9E5DD;
+	position: absolute;
+	width: 775px;
+	height: 948px;
+	left: 31px;
+	top: 471px;
+	background: #FCF9F2;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.new-brew-button{
+	position: absolute;
+	width: 770px;
+	height: 112px;
+	left: 33px;
+	top: 522px;
+	background: #FFFFFF;
+	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.brew-button{
+	position: absolute;
+	width: 770px;
+	height: 124px;
+	left: 33px;
+	top: 635px;
+
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.form-title{
+
+    font-family: Roboto Slab;
+    font-size: 24px !important;
+    line-height: 23px;
+    letter-spacing: 4px;
+
+    color: white !important;
+
+    }
+
+.form-title span{
+        font-weight: lighter;
+        font-size: 18px;
+        letter-spacing: 1px; 
+
+    }
+div .panel-heading{
+        border: 1px solid #FFFBFB;
+        background: inherit !important;
+    }
+div .panel {
+        font-size: 18px !important;
+        font-family: inherit;
+        color:white !important;
+        background: rgba(0, 0, 0, 0.56);
+        border: 1px solid #FFFBFB;
+        text-align: center;
+    }
+div .panel-body{
+	background-color: #ffffff38;
+	font-size: 18px !important;
+	font-family: Roboto Slab;
+}
+select{
+        color:black !important;
+    }
+.white-submit-button{
+        width:100%;
+        font-size: 18px;
+        font-family: inherit;
+        color:white;
+        background: #f8f9fa6b;
+        border: 1px solid #FFFBFB;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    }
+.input-box{
+    width: 100%;
+    font-size: 18px;
+    align-items: center;
+    }
+
+
+
+
+

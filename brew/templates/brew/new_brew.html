@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssContent %}
+<style>
+    
+    #base {
+        background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+          background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    div .row{
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class='container-fluid login-box justify-content-center centerBlock'>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            <div class='row'>
+                <div class="col form-title text-right">
+                    {{ form.coffee_name.errors }}
+                    {{ form.coffee_name.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.coffee_name }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+                    {{ form.roastery.errors }}
+                    {{ form.roastery.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.roastery }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.home_roast.errors }}
+                    {{ form.home_roast.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.home_roast }}
+                </div>
+            </div>
+            <div class='row form-title justify-content-center'>
+                <div class="col text-right">
+    
+                    
+                        {{ form.roast_levels.errors }}
+                        {{ form.roast_levels.label_tag }}
+                </div>
+                <div class="col text-left">
+                        {% for level in form.roast_levels %}
+                
+                        <span>{{ level }}<br></span>
+                
+                        {% endfor %}
+                </div>    
+            </div>
+            
+            <div class='row form-title justify-content-center'>
+                <div class="col text-right">
+         
+                    {{ form.methods.errors }}
+                    {{ form.methods.label_tag }}
+                </div>
+                <div class="col text-left">
+                    {% for method in form.methods %}
+
+                    <span>{{ method }}<br></span>
+           
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+      
+	
+  <div class="fieldWrapper">
+    	<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title form-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+    				<label for="{{ form.flavor.name }}">Flavor</label>
+    				</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    {{ form.flavor.errors }}
+                    {% for flavor in form.flavor %}
+                    <div class='flavor-checkbox'>
+                    
+                    {{ flavor }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+
+    <div class="fieldWrapper">
+    	<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title form-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+    				<label for="{{ form.acidity.name }}">Acidity</label>
+    				</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    {{ acidity.errors }}
+                    {% for acidity in form.acidity %}
+                    <div class='flavor-checkbox'>
+                    
+                    {{ acidity }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+   </div>
+    <input class='white-submit-button' type="submit" value="Submit">
+        <div style = 'margin-top: 20px; margin-bottom: 10px;' class='row justify-content-center'>
+        <a class='link' href="{% url 'brew:profile' %}"> Back</a>
+    </div>
+    </form>
+</div><!--container-->
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+
+
+
+

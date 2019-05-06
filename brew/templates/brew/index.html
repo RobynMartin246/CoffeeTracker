@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cssContent %}
+<style>
+	#base {
+		background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+		background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: center;
+
+	}
+
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+	
+		<div class='container hero login-box'>
+			<div class='row d-flex align-items-center justify-content-start'>
+				<div class ='text-left'>
+					<h1>Coffee Tracker</h1>
+				</div>
+			</div>
+			<div class = 'row d-flex justify-content-start'>
+				<div class = 'col text-left'>
+				<p>Who carries a pencil around anyways</p>
+				</div>
+			</div>
+			<div class = 'row'>
+				
+				<button class='clear-button'><a href="{% url 'brew:register' %}">Sign up</a> </button>
+				
+				<button class='white-button' id='white-button'> <a href="{% url 'brew:login' %}">Log in </button>
+				</div>
+			</div>
+			
+
+	</div>
+
+
+
+
+
+{% endblock %}

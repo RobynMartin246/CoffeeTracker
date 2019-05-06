@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssContent %}
+<style>
+    
+    #base {
+        background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+          background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+	div h4{
+		letter-spacing: 0px!important;
+		margin-bottom: 0px;
+	}
+	div p{
+		color: #c1c1c1;
+	}
+</style>
+{% endblock %}
+{% block content %}
+<div class='container-fluid login-box justify-content-center centerBlock'>
+	<div style = 'margin-bottom: 10px;' class='row justify-content-start'>
+		<a class='link' href="{% url 'brew:profile' %}"> Back</a>
+	</div>
+    <div class='row text-center justify-content-center'>
+    	
+        <h2>{{roast.roast_name}}{{brew.pk}}{{brew.id}}</h2>
+    </div>
+    <div class='row text-center justify-content-center'>
+        
+        <h3>{{roast.get_origin_display}}</h3>
+    </div>
+    <hr>
+	<div class='row'>
+       <div class = 'col text-left'>
+        <h4>Batch Size:</h4>
+            <p>{{roast.batch_size}}</p>
+        </div>
+        <div class = 'col text-left'>
+       	<h4>Roast Level:</h4>
+		<p>{{roast.get_roast_levels_display}}</p>
+		</div>
+		<div class = 'col text-left'>
+			<h4>Roast Time</h4>
+			<p>{{roast.roast_time}}</p>
+		</div>              
+    </div>
+    <div class='row'>
+        <div class = 'col text-left'>
+       		<h4>First Crack Start:</h4>
+             <p>{{roast.first_crack_start}}</p>
+    	</div>
+        <div class="col text-left">
+            <h4>First Crack End</h4>
+            <p>{{roast.first_crack_end}}</p>
+        </div>
+        <div class="col text-left">
+        	<h4>Second Crack Start:</h4>
+             <p>{{roast.second_crack_start}}</p>
+    	</div>
+    </div>
+    <div class='row text-center justify-content-center'>
+        <h4>Notes:</h4>
+        <p>{{roast.notes}}</p>
+        
+    </div>
+    <div class='row text-center'>
+
+	<a class= 'clear-login-button' href="{% url 'brew:update_roast' roast.id %}"> Edit</a>
+	</div>
+	<div class='row justify-content-center'>
+	<a class='link' href="{% url 'brew:roast_delete' roast.id %}"> Delete</a>
+	</div>
+           
+</div><!--container-->
+
+
+
+{% endblock %}
+
+
+
+
+

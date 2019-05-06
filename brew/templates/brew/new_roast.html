@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssContent %}
+<style>
+    
+    #base {
+        background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+          background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    div .row{
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class='container-fluid login-box justify-content-center centerBlock'>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            <div class='row'>
+                <div class="col form-title text-right">
+                    {{ form.roast_name.errors }}
+                    {{ form.roast_name.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.roast_name }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+                    {{ form.origin.errors }}
+                    {{ form.origin.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.origin }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.batch_size.errors }}
+                    {{ form.batch_size.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.batch_size }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.roast_time.errors }}
+                    {{ form.roast_time.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.roast_time }}
+                </div>
+            </div>
+            <div class='row form-title justify-content-center'>
+                <div class="col text-right">
+    
+                    
+                        {{ form.roast_levels.errors }}
+                        {{ form.roast_levels.label_tag }}
+                </div>
+                <div class="col text-left">
+                        {% for level in form.roast_levels %}
+                
+                        <span>{{ level }}<br></span>
+                
+                        {% endfor %}
+                </div>    
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.first_crack_start.errors }}
+                    {{ form.first_crack_start.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.first_crack_start }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.first_crack_end.errors }}
+                    {{ form.first_crack_end.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.first_crack_end }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.second_crack_start.errors }}
+                    {{ form.second_crack_start.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.second_crack_start }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col form-title text-right">
+
+                    {{ form.notes.errors }}
+                    {{ form.notes.label_tag }}
+                </div>
+                <div class="col text-left input-box">
+                    {{ form.notes }}
+                </div>
+            </div>
+        </div>
+        <input class='white-submit-button' type="submit" value="Submit">
+        <div style = 'margin-top: 20px; margin-bottom: 10px;' class='row justify-content-center'>
+        <a class='link' href="{% url 'brew:profile' %}"> Back</a>
+    </div>
+
+</form>
+</div>
+    
+{% endblock %}

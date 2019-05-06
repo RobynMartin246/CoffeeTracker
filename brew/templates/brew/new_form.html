@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cssContent %}
+<style>
+	#base {
+		background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+            ),url("{% static 'brew/images/bluebeans.jpg' %}");
+		background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: center;
+
+	}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<body>
+<div class='container login-box d-inline-flex justify-content-center'>
+	<div class='row'>
+		<div class="col text-center">
+			<div class="centerBlock header">
+				{% block form_content %}{% endblock %}
+
+</body>
+  			

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssContent %}
+<style>
+    
+    #base {
+        background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+          background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+	div h4{
+		letter-spacing: 0px!important;
+		margin-bottom: 0px;
+	}
+	div p{
+		color: #c1c1c1;
+	}
+</style>
+{% endblock %}
+{% block content %}
+<div class='container-fluid login-box justify-content-center centerBlock'>
+    <div class='row text-center justify-content-center'>
+		<form method="post">{% csrf_token %}
+    		<h4>Are you sure you want to delete {{ brew.coffee_name }}?</h4>
+   			 <input class= 'clear-login-button' type="submit" value="Confirm">
+		</form>
+	</div>
+	<div style = 'margin-bottom: 10px;' class='row justify-content-center'>
+		<a class='link' href="{% url 'brew:brew_profile' pk=brew.id %}"> Back</a>
+
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cssContent %}
+<style>
+	.hero-image {
+		background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+            ),url("{% static 'brew/images/heartcoffee.jpg' %}");
+		background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: left;
+    	height: 350px; 
+    	margin-bottom: 0 !important;
+	}
+
+	.header-color{
+		background: white;
+	}
+	.header-size{
+		margin:0;
+		font-weight:bold;
+
+	}
+	#myTab {
+		background-color: #F5F4F4;
+		font-size: 18px;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.28);
+	}
+	#myTab a{
+		color: #787978;
+
+	}
+	#myTab li.active a{
+		border-bottom: 5px solid #04D5FD;
+		color:black;
+	}
+	#myTab li a{
+		padding:10px 30px;
+	}
+	
+	.navbar{
+		min-height: 20px !important;
+		height: 20px !important;
+		margin-bottom: 0 !important;
+		border-bottom: black;
+		background-color: #F5F4F4;
+		
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.28);
+
+
+	}
+	#navbarSupportedContent li a{
+		
+		border-color: black;
+		color:black;
+		font-size: 10px;
+		padding: 0px, 5px !important;
+	}
+
+	.profile-list{
+		background: rgba(19, 19, 19, 0.26);;
+	}
+
+	hr {
+	border-top: 1px solid #FFFFFF;
+	}
+
+</style>
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-md">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" style="padding: 0px, 5px;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user.username}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Log Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+		<div class = 'jumbotron hero-image d-flex justify-content-start align-items-end'>
+			<div class = 'container' style='padding-top:75px'>
+			<div class='row text-left'>
+				<h1> Coffee Tracker</h1>
+			</div>
+
+			<div class='row text-left'>
+				<button class='clear-button'><a href="{% url 'brew:new_brew' %}">New Brew</a></button>
+				<button class='white-button'><a href="{% url 'brew:new_roast' %}">New Roast</a></button>
+			</div>
+		</div>
+		</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item active">
+    <a class="nav-link" id="brew-tab" data-toggle="tab" href="#brew" role="tab" aria-controls="brew" aria-selected="true">Brew</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="roast-tab" data-toggle="tab" href="#roast" role="tab" aria-controls="roast" aria-selected="false">Roast</a>
+  </li>
+</ul>
+
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="brew" role="tabpanel" aria-labelledby="brew-tab">
+  	<div class='container-fluid profile-list'>
+  	{% if brew_list %}
+		{% for brew in brew_list %}
+  		<div class='row' style="padding-top: 20px;">
+
+  					<div class= 'col'>
+  				
+						<h2>{{brew.coffee_name}}</h2> 
+						<h3>{% if brew.roastery %}
+								{{brew.roastery}}
+							{% else %}
+								{{brew.get_home_brew_display}}
+							{% endif %}
+							</h3>
+						<p>{{brew.get_roast_levels_display}} Roast . {{brew.get_methods_display}}
+						
+					</p>
+					</div>
+					<div class= 'col d-flex'>
+						<span style="align-self: flex-end;">
+						<a style='margin-right: 15px;' class='link' href="{% url 'brew:brew_profile' brew.id %}">View</a>
+						<a class='link' href="{% url 'brew:update_brew' brew.id %}">Edit</a>
+					</span>
+					</div>
+	
+						
+				</div>
+				<hr>
+				{% endfor %}
+				{% else %}
+					<p>Add Brew</p>
+				{% endif %}
+		</div>	
+					
+  	</div>
+  		
+ 
+  <div class="tab-pane" id="roast" role="tabpanel" aria-labelledby="roast-tab">
+  	<div class='container-fluid profile-list'>
+  		{% if roast_list %}
+		{% for roast in roast_list %}
+  		<div class='row' style="padding-top: 20px;">
+
+  					<div class= 'col'>
+  				
+						<h2>{{roast.get_origin_display}} . {{roast.roast_name}}</h2> <h3></h3>
+						
+						<p>{{roast.get_roast_levels_display}} Roast
+						
+					</p>
+						
+					</div>
+					<div class= 'col d-flex'>
+						<span style="align-self: flex-end;">
+						<a style='margin-right: 15px;' class='link' href="{% url 'brew:roast_profile' roast.id %}">View</a>
+						<a class='link' href="{% url 'brew:update_roast' roast.id %}">Edit</a>
+					</span>
+					</div>
+	
+						
+				</div>
+				<hr>
+				{% endfor %}
+				{% else %}
+					<p>Add Brew</p>
+				{% endif %}
+			</div>
+		</div>	
+  
+	</div>
+</div>
+<!-- Tab panes
+<ul class="nav nav-tabs" id='myTab' role='tablist'>
+  <li class="nav-item">
+    <a class="nav-link active" id="brew-tab" data-toggle="tab" href="#brew" role="tab" aria-controls="brew" aria-selected="true" href="#brew">Brew</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="roast-tab" data-toggle="tab" href="#roast" role="tab" aria-controls="roast" aria-selected="false">Roast</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+	<div class="tab-pane active" id="brew" role="tabpanel" aria-labelledby="brew-tab">
+		Brew
+	</div>
+</div>
+
+<div class="tab-content">
+	<div class="tab-pane" id="roast" role="tabpanel" aria-labelledby="roast-tab">
+		Roast
+	</div>
+</div>
+-->
+<!--
+		<div class='container'>
+			{% if brew_list %}
+				{% for brew in brew_list %}
+					<div class = 'row'>
+						<p>{{brew.coffee_name}}</p>
+						<p>{{brew.get_roast_levels_display}} . {{brew.get_methods_display}}
+						<a href="{% url 'brew:brew_profile' brew.id %}">View</a> </p>
+						<hr>
+				{% endfor %}
+				{% else %}
+					<p>Add Brew</p>
+				{% endif %}
+					</div>	
+
+Todo:
+-->
+{% endblock %}

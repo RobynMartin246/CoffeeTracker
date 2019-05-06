@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssContent %}
+<style>
+	#base {
+		background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+		  background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: center;
+
+	}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class='container-fluid login-box justify-content-center'>
+	<div class='row'>
+		<div class="col text-center">
+			<div class="centerBlock">
+  			<form method="post">
+  			{% csrf_token %}
+
+  			{{ form.non_field_errors }}
+
+        	<div class="fieldWrapper">
+        	{{ form.username.errors }}
+        	<h4>Username</h4>
+        	{{ form.username }}
+    		</div>
+
+        	<div class="fieldWrapper" style="margin-top: 20px;">
+        	{{ form.password1.errors }}
+        	<h4>Password</h4>
+        	{{ form.password1 }}
+    		</div>
+
+        	<div class="fieldWrapper" style="margin-top: 20px;">
+        	{{ form.password2.errors }}
+        	<h4>Retype Password</h4>
+        	{{ form.password2 }}
+
+    		</div>
+         
+  			<button class='clear-login-button' type="submit">Login</button>
+  			
+
+			</form>
+			<div>
+  				<a class='link' href="{% url 'brew:login' %}">Have an account?</a>
+  			</div>
+		</div>
+		</div>
+	</div>
+{% endblock %}

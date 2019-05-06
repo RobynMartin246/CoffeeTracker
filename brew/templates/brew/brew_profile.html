@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssContent %}
+<style>
+    
+    #base {
+        background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+          background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+	div h4{
+		letter-spacing: 0px!important;
+		margin-bottom: 0px;
+	}
+	div p{
+		color: #c1c1c1;
+	}
+</style>
+{% endblock %}
+{% block content %}
+<div class='container-fluid login-box justify-content-center centerBlock'>
+	<div style = 'margin-bottom: 10px;' class='row justify-content-start'>
+		<a class='link' href="{% url 'brew:profile' %}"> Back</a>
+	</div>
+    <div class='row text-center justify-content-center'>
+    	
+        <h2>{{brew.coffee_name}}{{brew.pk}}{{brew.id}}</h2>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <h3>{% if brew.home_roast %}
+            		by {{brew.home_roast}}
+            	{% else %}
+            		{{brew.roastery}}
+            	{% endif %}
+        </h3>
+
+    </div>
+    
+	<div class='row'>
+       <div class = 'col text-left'>
+       	<h4>Roast Level:</h4>
+		<p>{{brew.get_roast_levels_display}}</p>
+		</div>
+		<div class = 'col text-left'>
+			<h4>Method:</h4>
+			<p>{{brew.get_methods_display}}</p>
+		</div>
+        
+                
+    </div>
+    <div class='row'>
+        <div class = 'col text-left'>
+       		<h4>Flavor Notes:</h4>
+       		{% if brew.flavor.all %}
+                {% for flavor in brew.flavor.all %}
+        		<p style='margin-bottom: 0;'>{{flavor}}</p>
+                {% endfor %}
+        	{% else %}
+        		<p>Tasted like coffee.</p>
+        	{% endif %}
+    	</div>
+
+        <div class="col text-left">
+        	<h4>Acidity Notes:</h4>
+        	 {% if brew.acidity.all %}
+                {% for acidity in brew.acidity.all %}
+        		<p style='margin-bottom: 0;'>{{acidity}}</p>
+                {% endfor %}
+        	{% else %}
+        		<p>Nothing to note.</p>
+        	{% endif %}
+    	</div>
+    </div>
+    <div class='row text-center'>
+
+	<a class= 'clear-login-button' href="{% url 'brew:update_brew' brew.id %}"> Edit</a>
+	</div>
+	<div class='row justify-content-center'>
+	<a class='link' href="{% url 'brew:brew_delete' brew.id %}"> Delete</a>
+	</div>
+           
+</div><!--container-->
+
+
+
+{% endblock %}
+
+
+
+
+
