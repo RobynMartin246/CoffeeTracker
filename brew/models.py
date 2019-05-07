@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+STARS = ((1,'★'),(2,'★★'),(3,'★★★'),(4,'★★★★'),(5,'★★★★★'))
 ROAST_CHOICES=((1,'Light'),(2,'Medium'),(3,'Dark'),(4,'Unknown'))
 METHOD_CHOICES=((1,'Pour Over'),(2,'AiroPress'),(3,'French Press'),(4,'Drip'),(5,"Unknown"))
 ORIGIN=(
@@ -81,6 +82,7 @@ class Brew(models.Model):
     flavor = models.ManyToManyField(Flavor, blank=True)
     user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     home_roast = models.ForeignKey('Roast', blank=True, null=True, on_delete=models.CASCADE)
+    stars = models.IntegerField(default=1, choices=STARS)
     def __str__(self):
         return self.coffee_name
 

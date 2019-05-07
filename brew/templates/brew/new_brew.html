@@ -11,8 +11,25 @@
     }
     div .row{
         margin-bottom: 20px;
+
     }
+
+    .rating label{
+        font-size: 10px;
+        color: gold;
+        text-shadow: 0 2px 5px rgba(0,0,0,.5);
+        display: block;
+        margin-bottom: 0;
+    }
+    .rating label:hover {
+        
+        font-size: 12px;
+        }
+
 </style>
+
+
+
 {% endblock %}
 {% block content %}
 <div class='container-fluid login-box justify-content-center centerBlock'>
@@ -20,7 +37,9 @@
         {% csrf_token %}
         {{ form.non_field_errors }}
         <div class="fieldWrapper">
+            
             <div class='row'>
+                
                 <div class="col form-title text-right">
                     {{ form.coffee_name.errors }}
                     {{ form.coffee_name.label_tag }}
@@ -80,6 +99,22 @@
 
                 </div>
             </div>
+
+            <div class='row form-title justify-content-center'>
+                <div class="col text-right">
+                  Star Rating:
+                 </div>
+                 {{ form.stars.errors }}
+                    
+                <div class="col text-left input-box rating">
+                   {% for star in form.stars %}
+                    {{ star }}
+                {% endfor %}
+                
+                </div>
+                
+            </div>
+    
         </div>
       
 	
@@ -130,15 +165,18 @@
             </div>
         </div>
    </div>
+   
+
     <input class='white-submit-button' type="submit" value="Submit">
         <div style = 'margin-top: 20px; margin-bottom: 10px;' class='row justify-content-center'>
-        <a class='link' href="{% url 'brew:profile' %}"> Back</a>
+    <a class='link' href="{% url 'brew:profile' %}"> Back</a>
     </div>
     </form>
 </div><!--container-->
 </div>
 </div>
 </div>
+
 
 {% endblock %}
 
