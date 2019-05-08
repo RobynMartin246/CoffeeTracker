@@ -20,10 +20,11 @@
 </style>
 {% endblock %}
 {% block content %}
-<div class='container-fluid login-box justify-content-center centerBlock'>
+<div class='container-fluid login-box justify-content-center center brew-box' style = 'padding-bottom: 20px'>
 	<div style = 'margin-bottom: 10px;' class='row justify-content-start'>
 		<a class='link' href="{% url 'brew:profile' %}"> Back</a>
 	</div>
+   
     <div class='row text-center justify-content-center'>
     	
         <h2>{{roast.roast_name}}{{brew.pk}}{{brew.id}}</h2>
