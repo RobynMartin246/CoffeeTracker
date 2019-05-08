@@ -3,12 +3,49 @@
 
 {% block cssContent %}
 <style>
-	#base {
-		background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+	.bluebeans {
+		background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+            ),url("{% static 'brew/images/bluebeans.jpg' %}");
 		background-repeat: no-repeat;
     	background-size: cover;
     	background-position: center;
+    	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    	height: 50%;
 
+	}
+	.pourover{
+		background-image: url("{% static 'brew/images/pourover.jpg' %}");
+		background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: center;
+    	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    	margin-bottom: 50px;
+		max-height: 75%;
+
+	}
+	.pourover:hover{
+		background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+            ),url("{% static 'brew/images/pourover.jpg' %}");
+	}
+	.beanjar{
+		background-image: url("{% static 'brew/images/beanjar.jpg' %}");
+		background-repeat: no-repeat;
+    	background-size: cover;
+    	background-position: center;
+    	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    	margin-bottom: 50px;
+    	max-height: 75%;
+    	
+	}
+	.beanjar:hover{
+		background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+            ),url("{% static 'brew/images/beanjar.jpg' %}");
 	}
 
 
@@ -17,31 +54,33 @@
 {% endblock %}
 
 {% block content %}
-
-
-	
-		<div class='container hero login-box'>
-			<div class='row d-flex align-items-center justify-content-start'>
-				<div class ='text-left'>
-					<h1>Coffee Tracker</h1>
-				</div>
-			</div>
-			<div class = 'row d-flex justify-content-start'>
-				<div class = 'col text-left'>
-				<p>Who carries a pencil around anyways</p>
-				</div>
-			</div>
-			<div class = 'row'>
-				
-				<button class='clear-button'><a href="{% url 'brew:register' %}">Sign up</a> </button>
-				
-				<button class='white-button' id='white-button'> <a href="{% url 'brew:login' %}">Log in </button>
-				</div>
-			</div>
+<div class = 'jumbotron bluebeans'>
+	<div class='container'>
+		<div style='padding-bottom:30px' class = 'row d-flex justify-content-end'>
+			<button class='clear-button'><a href="{% url 'brew:register' %}">Create an account</a> </button>
+			<button class='clear-button' id='white-button'> <a href="{% url 'brew:login' %}">Log in</button>
+		</div>
+		<div class='row d-flex justify-content-center'>
 			
+					<h1>Coffee Tracker</h1>
+		</div>
+		<div class='row d-flex justify-content-center'>
+					<h3>Log Roasts . Rate Brews</h3>
+				
+		</div>
 
 	</div>
-
+</div>
+<div class='container d-flex h-100 justify-content-center pourover'>
+	<div class='row align-self-center'>
+		<h2>Brew</h2>
+	</div>
+</div>
+<div class='container d-flex h-100 justify-content-center beanjar'>
+	<div class='row align-self-center'>
+		<h2>Roast</h2>
+	</div>
+</div>
 
 
 

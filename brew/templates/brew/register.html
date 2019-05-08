@@ -2,13 +2,21 @@
 {% load static %}
 {% block cssContent %}
 <style>
-	#base {
-		background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
-		  background-repeat: no-repeat;
-    	background-size: cover;
-    	background-position: center;
+  #base {
+    background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
+    background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
 
-	}
+  }
+  .center {
+    margin: 0 auto;
+    width: 80%;
+}
+  input{
+    width: 100%;
+    height: 30px;
+}
 
 </style>
 {% endblock %}
@@ -17,7 +25,8 @@
 
 <div class='container-fluid login-box justify-content-center'>
 	<div class='row'>
-		<div class="col text-center">
+		<div class="center" style='margin-top: 10px !important;'>
+      <h1>Register</h1>>
 			<div class="centerBlock">
   			<form method="post">
   			{% csrf_token %}
@@ -43,11 +52,11 @@
 
     		</div>
          
-  			<button class='clear-login-button' type="submit">Login</button>
+  			<button class='clear-login-button' type="submit">Get Started</button>
   			
 
 			</form>
-			<div>
+			<div class='text-center'>
   				<a class='link' href="{% url 'brew:login' %}">Have an account?</a>
   			</div>
 		</div>
