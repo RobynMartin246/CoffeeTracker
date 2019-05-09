@@ -149,6 +149,7 @@ div p{
 	height: fit-content !important;
 	top: 56px;
 	background: rgba(0, 0, 0, 0.56);
+	max-width: 500px;
 	
 }
 
@@ -224,8 +225,15 @@ div .panel-body{
 	font-family: Roboto Slab;
 }
 select{
-        color:black !important;
+        color:#18b1ca !important;
+
     }
+@media (min-width: 1170px){
+	select{
+		color:black !important;
+        
+    }
+}
 .white-submit-button{
         width:100%;
         font-size: 18px;

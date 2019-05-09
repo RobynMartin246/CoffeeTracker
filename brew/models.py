@@ -82,7 +82,7 @@ class Brew(models.Model):
     flavor = models.ManyToManyField(Flavor, blank=True)
     user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     home_roast = models.ForeignKey('Roast', blank=True, null=True, on_delete=models.CASCADE)
-    stars = models.IntegerField(default=1, choices=STARS)
+    stars = models.IntegerField(default=3, choices=STARS)
     def __str__(self):
         return self.coffee_name
 

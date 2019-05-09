@@ -5,13 +5,16 @@ from .models import Brew, Roast, Acidity, Flavor
 
 class BrewAdmin(admin.ModelAdmin):
 	fields = [
-		'coffee_name',  
+		'coffee_name',
+		'roastery',
+		'pub_date',  
 		'roast_levels',
-		'methods', 
+		'home_roast'
 		'user',
-		'home_roast',
+		'methods', 
 		'flavor',
 		'acidity'
+		
 		
 
 	]
@@ -33,6 +36,7 @@ class RoastAdmin(admin.ModelAdmin):
 		'second_crack_start',
 		'notes'
 		]
+	list_display = ('roast_name', 'origin', 'user', 'pub_date')
 
 
 admin.site.register(Roast, RoastAdmin)

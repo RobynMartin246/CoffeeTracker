@@ -12,6 +12,9 @@
     div .row{
         margin-bottom: 20px;
     }
+    #id_notes{
+        width:100%;
+    }
 </style>
 {% endblock %}
 {% block content %}
@@ -20,46 +23,46 @@
         {% csrf_token %}
         {{ form.non_field_errors }}
         <div class="fieldWrapper">
-            <div class='row'>
-                <div class="col form-title text-right">
+            <div class='row text-center'>
+                <div class="col form-title text-center">
                     {{ form.roast_name.errors }}
                     {{ form.roast_name.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.roast_name }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
                     {{ form.origin.errors }}
                     {{ form.origin.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.origin }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
 
                     {{ form.batch_size.errors }}
                     {{ form.batch_size.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.batch_size }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
 
                     {{ form.roast_time.errors }}
                     {{ form.roast_time.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.roast_time }}
                 </div>
             </div>
             <div class='row form-title justify-content-center'>
-                <div class="col text-right">
+                <div class="col text-center">
     
                     
                         {{ form.roast_levels.errors }}
@@ -74,43 +77,41 @@
                 </div>    
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
 
                     {{ form.first_crack_start.errors }}
                     {{ form.first_crack_start.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.first_crack_start }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
 
                     {{ form.first_crack_end.errors }}
                     {{ form.first_crack_end.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.first_crack_end }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title text-center">
 
                     {{ form.second_crack_start.errors }}
                     {{ form.second_crack_start.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.second_crack_start }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-right">
+                <div class="col form-title">
 
                     {{ form.notes.errors }}
                     {{ form.notes.label_tag }}
-                </div>
-                <div class="col text-left input-box">
-                    {{ form.notes }}
+                    <span style='color:black;'>{{ form.notes }}</span>
                 </div>
             </div>
         </div>
