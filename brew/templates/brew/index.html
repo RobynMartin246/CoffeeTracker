@@ -57,8 +57,9 @@
 <div class = 'jumbotron bluebeans'>
 	<div class='container'>
 		<div style='padding-bottom:30px' class = 'row d-flex justify-content-end'>
-			<button class='clear-button'><a href="{% url 'brew:register' %}">Create an account</a> </button>
-			<button class='clear-button' id='white-button'> <a href="{% url 'brew:login' %}">Log in</button>
+			<button class='clear-button'><a href="{% url 'brew:register' %}">Create an account</a> 
+			</button>
+			<button class='clear-button' id='white-button'> <a href="{% url 'brew:login' %}">Log in</a></button>
 		</div>
 		<div class='row d-flex justify-content-center'>
 			
@@ -71,16 +72,20 @@
 
 	</div>
 </div>
+<a href="{% url 'brew:login' %}">
 <div class='container d-flex h-100 justify-content-center pourover'>
 	<div class='row align-self-center'>
 		<h2>Brew</h2>
 	</div>
 </div>
+</a>
+<a href="{% url 'brew:login' %}">
 <div class='container d-flex h-100 justify-content-center beanjar'>
 	<div class='row align-self-center'>
 		<h2>Roast</h2>
 	</div>
 </div>
+</a>
 
 
 

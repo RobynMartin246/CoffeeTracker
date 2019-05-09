@@ -6,7 +6,7 @@ from django_starfield import Stars
 class BrewForm(ModelForm):
 	class Meta:
 		model = Brew
-		exclude = ['user']
+		fields='__all__'
 		widgets = {
 			'roast_levels': RadioSelect(),
 			'methods': RadioSelect(),
@@ -14,6 +14,9 @@ class BrewForm(ModelForm):
 			'flavor': CheckboxSelectMultiple(),
 			'stars': RadioSelect(),
 		}
+	def __init__(self, user, *args, **kwargs):
+		super(BrewForm, self).__init__(*args, **kwargs)
+		self.fields['home_roast'].queryset = Roast.objects.filter(user=user)
 
 class RoastForm(ModelForm):
 	class Meta:

@@ -20,7 +20,7 @@
 </style>
 {% endblock %}
 {% block content %}
-<div class='container-fluid login-box justify-content-center centerBlock'>
+<div class='container-fluid login-box brew-box justify-content-center center'>
     <div class='row text-center justify-content-center'>
 		<form method="post">{% csrf_token %}
     		<h4>Are you sure you want to delete {{ brew.coffee_name }}?</h4>
@@ -28,7 +28,7 @@
 		</form>
 	</div>
 	<div style = 'margin-bottom: 10px;' class='row justify-content-center'>
-		<a class='link' href="{% url 'brew:brew_profile' pk=brew.id %}"> Back</a>
+		<a class='link' href="{% url 'brew:brew_profile' brew.id %}"> Back</a>
 
 	</div>
 </div>
