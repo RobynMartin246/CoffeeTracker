@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm, CheckboxSelectMultiple, RadioSelect, SelectMultiple
 from brew.models import Brew, Roast, Acidity, Flavor
-from django_starfield import Stars
+
 
 class BrewForm(ModelForm):
 	class Meta:
@@ -25,6 +25,6 @@ class RoastForm(ModelForm):
 		widgets ={
 			'roast_levels': RadioSelect(),
 		}
-		
-		
+
+
 

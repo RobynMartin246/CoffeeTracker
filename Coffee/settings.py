@@ -25,7 +25,7 @@ SECRET_KEY = '(da6xgkh)#f7s+$m18b5_&jkjfs43fbm(wjwpmt1l9!w&9kl$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['robynmartin246.pythonanywhere.com']
 
 
 # Application definition
@@ -80,11 +80,10 @@ WSGI_APPLICATION = 'Coffee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'coffee',
-        'USER': 'admin',
-        'PASSWORD': 'password1',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'RobynMartin246$default',
+        'USER': 'RobynMartin246',
+        'PASSWORD': 'Ridebikes246!',
+        'HOST': 'RobynMartin246.mysql.pythonanywhere-services.com',
     }
 }
 
