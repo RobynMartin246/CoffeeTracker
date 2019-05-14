@@ -2,7 +2,7 @@
 {% load static %}
 {% block cssContent %}
 <style>
-    
+
     #base {
         background-image: url("{% static 'brew/images/bluebeans.jpg' %}");
           background-repeat: no-repeat;
@@ -22,7 +22,7 @@
         margin-bottom: 0;
     }
     .rating label:hover {
-        
+
         font-size: 12px;
         }
 
@@ -37,14 +37,14 @@
         {% csrf_token %}
         {{ form.non_field_errors }}
         <div class="fieldWrapper">
-            
+
             <div class='row'>
-                
+
                 <div class="col form-title text-center">
                     {{ form.coffee_name.errors }}
                     {{ form.coffee_name.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.coffee_name }}
                 </div>
             </div>
@@ -53,39 +53,39 @@
                     {{ form.roastery.errors }}
                     {{ form.roastery.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col text-center input-box">
                     {{ form.roastery }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-center">
+                <div class="col-xs-12 col-sm-6 form-title text-center">
 
                     {{ form.home_roast.errors }}
                     {{ form.home_roast.label_tag }}
                 </div>
-                <div class="col text-left input-box">
+                <div class="col-xs-12 col-sm-6 text-center input-box">
                     {{ form.home_roast }}
                 </div>
             </div>
             <div class='row form-title justify-content-center'>
                 <div class="col text-center">
-    
-                    
+
+
                         {{ form.roast_levels.errors }}
                         {{ form.roast_levels.label_tag }}
                 </div>
                 <div class="col text-left">
                         {% for level in form.roast_levels %}
-                
+
                         <span>{{ level }}<br></span>
-                
+
                         {% endfor %}
-                </div>    
+                </div>
             </div>
-            
+
             <div class='row form-title justify-content-center'>
                 <div class="col text-center">
-         
+
                     {{ form.methods.errors }}
                     {{ form.methods.label_tag }}
                 </div>
@@ -93,7 +93,7 @@
                     {% for method in form.methods %}
 
                     <span>{{ method }}<br></span>
-           
+
                     {% endfor %}
 
 
@@ -101,23 +101,23 @@
             </div>
 
             <div class='row form-title justify-content-center'>
-                <div class="col text-center">
+                <div class="col-xs-12 col-sm-6 text-center">
                   Star Rating:
                  </div>
                  {{ form.stars.errors }}
-                    
-                <div class="col text-left input-box rating">
+
+                <div class="col-xs-12 col-sm-6 text-left input-box rating">
                    {% for star in form.stars %}
                     {{ star }}
                 {% endfor %}
-                
+
                 </div>
-                
+
             </div>
-    
+
         </div>
-      
-	
+
+
   <div class="fieldWrapper">
     	<div class="panel panel-default">
             <div class="panel-heading">
@@ -132,7 +132,7 @@
                     {{ form.flavor.errors }}
                     {% for flavor in form.flavor %}
                     <div class='flavor-checkbox'>
-                    
+
                     {{ flavor }}
                     </div>
                     {% endfor %}
@@ -153,11 +153,11 @@
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
+                <div class="panel-body text-left">
                     {{ acidity.errors }}
                     {% for acidity in form.acidity %}
                     <div class='flavor-checkbox'>
-                    
+
                     {{ acidity }}
                     </div>
                     {% endfor %}
@@ -165,7 +165,7 @@
             </div>
         </div>
    </div>
-   
+
 
     <input class='white-submit-button' type="submit" value="Submit">
         <div style = 'margin-top: 20px; margin-bottom: 10px;' class='row justify-content-center'>

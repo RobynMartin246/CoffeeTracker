@@ -7,7 +7,7 @@ from django.utils import timezone
 
 STARS = ((1,'★'),(2,'★★'),(3,'★★★'),(4,'★★★★'),(5,'★★★★★'))
 ROAST_CHOICES=((1,'Light'),(2,'Medium'),(3,'Dark'),(4,'Unknown'))
-METHOD_CHOICES=((1,'Pour Over'),(2,'AiroPress'),(3,'French Press'),(4,'Drip'),(5,"Unknown"))
+METHOD_CHOICES=((1,'Pour Over'),(2,'Aero Press'),(3,'French Press'),(4,'Drip'),(5,"Unknown"))
 ORIGIN=(
 	(None, 'Country of Origin'),
     ('Africa', (
