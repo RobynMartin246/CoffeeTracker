@@ -40,41 +40,41 @@
 
             <div class='row'>
 
-                <div class="col form-title text-center">
+                <div class="col-sm-6 form-title text-center">
                     {{ form.coffee_name.errors }}
                     {{ form.coffee_name.label_tag }}
                 </div>
-                <div class="col text-center input-box">
+                <div class="col-sm-6 text-center input-box">
                     {{ form.coffee_name }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col form-title text-center">
+                <div class="col-sm-6 form-title text-center">
                     {{ form.roastery.errors }}
                     {{ form.roastery.label_tag }}
                 </div>
-                <div class="col text-center input-box">
+                <div class="col-sm-6 text-center input-box">
                     {{ form.roastery }}
                 </div>
             </div>
             <div class='row'>
-                <div class="col-xs-12 col-sm-6 form-title text-center">
+                <div class="col-sm-6 form-title text-center">
 
                     {{ form.home_roast.errors }}
                     {{ form.home_roast.label_tag }}
                 </div>
-                <div class="col-xs-12 col-sm-6 text-center input-box">
+                <div class="col-sm-6 text-center input-box">
                     {{ form.home_roast }}
                 </div>
             </div>
             <div class='row form-title justify-content-center'>
-                <div class="col text-center">
+                <div class="col-xs-12 col-sm-6 text-center">
 
 
                         {{ form.roast_levels.errors }}
                         {{ form.roast_levels.label_tag }}
                 </div>
-                <div class="col text-left">
+                <div class="col-xs-12 col-sm-6 text-left">
                         {% for level in form.roast_levels %}
 
                         <span>{{ level }}<br></span>
@@ -84,12 +84,12 @@
             </div>
 
             <div class='row form-title justify-content-center'>
-                <div class="col text-center">
+                <div class="col-xs-12 col-sm-6 text-center">
 
                     {{ form.methods.errors }}
                     {{ form.methods.label_tag }}
                 </div>
-                <div class="col text-left">
+                <div class="col-xs-12 col-sm-6 text-left">
                     {% for method in form.methods %}
 
                     <span>{{ method }}<br></span>
@@ -128,7 +128,7 @@
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
+                <div class="panel-body text-left">
                     {{ form.flavor.errors }}
                     {% for flavor in form.flavor %}
                     <div class='flavor-checkbox'>

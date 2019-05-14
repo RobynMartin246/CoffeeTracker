@@ -7,15 +7,15 @@ class BrewAdmin(admin.ModelAdmin):
 	fields = [
 		'coffee_name',
 		'roastery',
-		'pub_date',  
+		'pub_date',
 		'roast_levels',
-		'home_roast'
+		'home_roast',
 		'user',
-		'methods', 
+		'methods',
 		'flavor',
 		'acidity'
-		
-		
+
+
 
 	]
 	list_display = ('coffee_name', 'user', 'pub_date')
@@ -34,7 +34,8 @@ class RoastAdmin(admin.ModelAdmin):
 		'first_crack_start',
 		'first_crack_end',
 		'second_crack_start',
-		'notes'
+		'notes',
+		'user'
 		]
 	list_display = ('roast_name', 'origin', 'user', 'pub_date')
 
