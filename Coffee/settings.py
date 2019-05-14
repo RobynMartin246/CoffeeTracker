@@ -125,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "/home/RobynMartin246/CoffeeTracker/static"
 
 LOGIN_REDIRECT_URL = 'brew:profile'
 LOGOUT_REDIRECT_URL = 'brew:index'
