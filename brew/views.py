@@ -20,7 +20,7 @@ from .models import Brew, Roast, Acidity, Flavor
 def index(request):
     return render(request,'brew/index.html')
 
-@login_required    
+@login_required
 def new_brew(request):
     if request.method == 'POST':
         form = BrewForm(request.user, request.POST)
@@ -36,10 +36,10 @@ def new_brew(request):
     return render(request, 'brew/new_brew.html', {'form': form})
 
 @login_required
-def update_brew(request, brew_id): 
+def update_brew(request, brew_id):
     brew = get_object_or_404(Brew, pk=brew_id)
     if request.method == "POST":
-        form = BrewForm(request.POST, instance=brew)
+        form = BrewForm(request.user, request.POST, instance=brew)
         if form.is_valid():
             brew = form.save(commit=False)
             brew.user = request.user
@@ -48,8 +48,8 @@ def update_brew(request, brew_id):
             form.save_m2m()
             return redirect('brew:brew_profile', brew_id)
     else:
-        form = BrewForm(instance=brew)
-    return render(request, 'brew/brew_update_form.html', {'form': form})  
+        form = BrewForm(request.user, instance=brew)
+    return render(request, 'brew/brew_update_form.html', {'form': form})
 
 @login_required
 def brew_delete(request, brew_id):
@@ -60,7 +60,7 @@ def brew_delete(request, brew_id):
     return render(request, 'brew/brew_confirm_delete.html', {'brew': brew})
 
 
-@login_required  
+@login_required
 def brew_profile(request, brew_id):
     brew = get_object_or_404(Brew, pk=brew_id)
     return render(request,'brew/brew_profile.html', {'brew': brew})
@@ -85,7 +85,7 @@ def roast_profile(request, roast_id):
     return render(request, 'brew/roast_profile.html', {'roast': roast})
 
 @login_required
-def update_roast(request, roast_id): 
+def update_roast(request, roast_id):
     roast = get_object_or_404(Roast, pk=roast_id)
     if request.method == "POST":
         form = RoastForm(request.POST, instance=roast)
@@ -97,7 +97,7 @@ def update_roast(request, roast_id):
             return redirect('brew:roast_profile', roast_id)
     else:
         form = RoastForm(instance=roast)
-    return render(request, 'brew/roast_update_form.html', {'form': form})  
+    return render(request, 'brew/roast_update_form.html', {'form': form})
 
 @login_required
 def roast_delete(request, roast_id):

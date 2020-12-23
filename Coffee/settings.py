@@ -25,7 +25,11 @@ SECRET_KEY = '(da6xgkh)#f7s+$m18b5_&jkjfs43fbm(wjwpmt1l9!w&9kl$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['mysite.pythonanywhere.com']
+=======
+ALLOWED_HOSTS = ['robynmartin246.pythonanywhere.com']
+>>>>>>> 6aac78b98217a14a9b3718c6d6c417dda71cb86f
 
 
 # Application definition
@@ -80,11 +84,10 @@ WSGI_APPLICATION = 'Coffee.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'coffee',
-        'USER': 'admin',
-        'PASSWORD': 'password1',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'RobynMartin246$default',
+        'USER': 'RobynMartin246',
+        'PASSWORD': 'Ridebikes246!',
+        'HOST': 'RobynMartin246.mysql.pythonanywhere-services.com',
     }
 }
 
@@ -126,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "/home/RobynMartin246/CoffeeTracker/static"
 
 LOGIN_REDIRECT_URL = 'brew:profile'
 LOGOUT_REDIRECT_URL = 'brew:index'
